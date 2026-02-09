@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza Hashem | Senior Web Developer</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Particles Container -->
+    <div id="particles-js"></div>
+
+    <header>
+        <nav class="glass-nav">
+            <div class="logo">&lt;Hamza /&gt;</div>
+            <ul class="nav-links">
+                <li><a href="#hero"><span>01.</span> Home</a></li>
+                <li><a href="#about"><span>02.</span> About</a></li>
+                <li><a href="#experience"><span>03.</span> Experience</a></li>
+                <li><a href="#work"><span>04.</span> Work</a></li>
+                <li><a href="#contact"><span>05.</span> Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero">
+            <div class="hero-container">
+                <p class="greeting" data-aos="fade-up" data-aos-delay="100">Hi, my name is</p>
+                <h1 class="name" data-aos="fade-up" data-aos-delay="200">Hamza Hashem.</h1>
+                <h2 class="subtitle" data-aos="fade-up" data-aos-delay="300">I build scalable web solutions.</h2>
+                <p class="description" data-aos="fade-up" data-aos-delay="400">
+                    I'm a Senior Web Developer based in the UAE specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, enterprise-grade products at <strong>Maqta Technologies Group</strong>.
+                </p>
+                <div class="hero-btns" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#contact" class="btn primary-btn">Get In Touch</a>
+                    <a href="#experience" class="btn secondary-btn">View Experience</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT / SKILLS SECTION -->
+        <section id="about" class="section-padding">
+            <div class="section-header" data-aos="fade-right">
+                <h2><span>02.</span> About & Skills</h2>
+                <div class="line"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text" data-aos="fade-right">
+                    <p>Hello! My name is Hamza and I enjoy creating things that live on the internet. My interest in web development started back in 2018. Fast-forward to today, and I've had the privilege of working at global trade environments and start-ups.</p>
+                    <p>My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.</p>
+                    
+                    <div class="skills-wrapper">
+                        <h3>Here are a few technologies I've been working with recently:</h3>
+                        <ul class="skills-list">
+                            <li><i class="fab fa-angular"></i> Angular</li>
+                            <li><i class="fab fa-react"></i> React</li>
+                            <li><i class="fas fa-code-branch"></i> ASP.NET Core</li>
+                            <li><i class="fab fa-docker"></i> Docker</li>
+                            <li><i class="fas fa-database"></i> MongoDB</li>
+                            <li><i class="fab fa-js"></i> TypeScript</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-img" data-aos="fade-left">
+                    <div class="img-wrapper">
+                        <!-- Using a tech-themed placeholder until user provides real photo -->
+                        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=3540&auto=format&fit=crop" alt="Coding Setup">
+                        <div class="img-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="section-padding">
+            <div class="section-header" data-aos="fade-right">
+                <h2><span>03.</span> Where I've Worked</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="experience-container" data-aos="fade-up">
+                <div class="tabs">
+                    <button class="tab-btn active" data-target="#job1">Maqta Tech</button>
+                    <button class="tab-btn" data-target="#job2">Maqta (Frontend)</button>
+                    <button class="tab-btn" data-target="#job3">Wizme</button>
+                    <button class="tab-btn" data-target="#job4">WFoodExpo</button>
+                </div>
+                
+                <div class="job-content active" id="job1">
+                    <h3>Senior Developer <span class="highlight">@ Maqta Technologies Group</span></h3>
+                    <p class="range">Dec 2023 - Present</p>
+                    <ul>
+                        <li>Develop enterprise-grade applications supporting global trade and import/export automation.</li>
+                        <li>Build scalable front-end and back-end solutions using Angular, React, ASP.NET Core, and MongoDB.</li>
+                        <li>Leverage AI-assisted tools (GitHub Copilot, Claude) to reduce dev time by 40%.</li>
+                    </ul>
+                </div>
+
+                <div class="job-content" id="job2">
+                    <h3>Front-End Developer <span class="highlight">@ Maqta Technologies Group</span></h3>
+                    <p class="range">July 2022 - Dec 2023</p>
+                    <ul>
+                        <li>Developed responsive UIs using Angular, TypeScript, SASS, and Angular Material.</li>
+                        <li>Optimized UI performance and accessibility across enterprise applications.</li>
+                        <li>Participated in sprint planning, daily stand-ups, and retrospectives.</li>
+                    </ul>
+                </div>
+
+                <div class="job-content" id="job3">
+                    <h3>Front-End Developer <span class="highlight">@ Wizme</span></h3>
+                    <p class="range">Sept 2021 - July 2022</p>
+                    <ul>
+                        <li>Built a virtual meetings platform using Angular and modern UI frameworks.</li>
+                        <li>Implemented complex business workflows including booking management.</li>
+                        <li>Worked closely with stakeholders to translate business requirements.</li>
+                    </ul>
+                </div>
+
+                <div class="job-content" id="job4">
+                    <h3>Front-End Developer <span class="highlight">@ WFoodExpo</span></h3>
+                    <p class="range">Apr 2020 - Sept 2021</p>
+                    <ul>
+                        <li>Improved application load speed by 60% by architecting a modular file structure.</li>
+                        <li>Implemented server-side rendering (Angular Universal) to enhance performance and SEO.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section-padding">
+             <div class="contact-container" data-aos="zoom-in">
+                <p class="overline"><span>05.</span> What's Next?</p>
+                <h2 class="title">Get In Touch</h2>
+                <p class="contact-text">
+                    I'm currently open to new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                </p>
+                <a href="mailto:hamzahshm98@gmail.com" class="btn primary-btn big-btn">Say Hello</a>
+                
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/hamzahasheim" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="tel:+971504695266"><i class="fas fa-phone-alt"></i></a>
+                    <a href="mailto:hamzahshm98@gmail.com"><i class="far fa-envelope"></i></a>
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Designed & Built by Hamza Hashem</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles.js for background effect -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
