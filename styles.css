@@ -724,14 +724,20 @@ footer {
         margin-bottom: 30px;
         -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
         
-        /* Hide scrollbar but keep functionality */
-        scrollbar-width: none;  /* Firefox */
-        -ms-overflow-style: none;  /* IE and Edge */
-        padding-bottom: 2px; /* Prevent border clipping */
+        /* Show scrollbar for visual feedback */
+        padding-bottom: 10px; /* Prevent border clipping and space for scrollbar */
     }
     
     .tabs::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
+        height: 5px; /* Visible scrollbar height */
+        display: block;
+    }
+    .tabs::-webkit-scrollbar-track {
+        background: var(--navy); 
+    }
+    .tabs::-webkit-scrollbar-thumb {
+        background: var(--lightest-navy); 
+        border-radius: 2px;
     }
 
     .tab-btn {
