@@ -257,11 +257,16 @@
         <p>Designed & Built by Hamza Hashem</p>
     </footer>
 
-    <!-- Lightbox Modal -->
+    <!-- Lightbox Modal with Slider -->
     <div id="lightbox-modal" class="lightbox">
         <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-container">
+            <button class="slider-btn prev-btn" id="prev-btn">&#10094;</button>
+            <img class="lightbox-content" id="lightbox-img">
+            <button class="slider-btn next-btn" id="next-btn">&#10095;</button>
+        </div>
         <div id="caption"></div>
+        <div class="slider-dots" id="slider-dots"></div>
     </div>
 
     <!-- Scripts -->
