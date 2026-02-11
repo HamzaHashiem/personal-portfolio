@@ -167,4 +167,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Lightbox Logic
+    const lightbox = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const captionText = document.getElementById('caption');
+    const closeBtn = document.querySelector('.close-lightbox');
+    
+    // Get all project images via their wrappers
+    const projectWrappers = document.querySelectorAll('.project-img-wrapper');
+    
+    projectWrappers.forEach(wrapper => {
+        wrapper.addEventListener('click', () => {
+            const img = wrapper.querySelector('img');
+            if (img) {
+                lightbox.style.display = "flex"; // Using flex to center
+                // Ensure flex styles for centering if not in CSS
+                lightbox.style.justifyContent = "center";
+                lightbox.style.alignItems = "center";
+                lightbox.style.flexDirection = "column";
+
+                lightboxImg.src = img.src;
+                captionText.innerHTML = img.alt;
+                // Disable scroll
+                document.body.style.overflow = "hidden";
+            }
+        });
+    });
+    
+    // Close when clicking X
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+    }
+
+    // Close when clicking outside image
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
+
 });

@@ -24,8 +24,8 @@
             <ul class="nav-links">
                 <li><a href="#hero"><span>01.</span> Home</a></li>
                 <li><a href="#about"><span>02.</span> About</a></li>
-                <li><a href="#experience"><span>03.</span> Experience</a></li>
-                <li><a href="#work"><span>04.</span> Work</a></li>
+                <li><a href="#projects"><span>03.</span> Projects</a></li>
+                <li><a href="#experience"><span>04.</span> Experience</a></li>
                 <li><a href="#contact"><span>05.</span> Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -85,10 +85,103 @@
             </div>
         </section>
 
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section-padding">
+            <div class="section-header" data-aos="fade-right">
+                <h2><span>03.</span> Featured Projects</h2>
+                <div class="line"></div>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1: ATLP -->
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-img-wrapper">
+                        <img src="images/projects/ATLP/Home.png" alt="ATLP - ADAFSA" loading="lazy">
+                        <div class="project-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>ATLP - ADAFSA</h3>
+                        <p>Advanced Trade & Logistics Platform for Food Safety.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2: EODA -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-img-wrapper">
+                        <img src="images/projects/EODA/Dashboard.png" alt="EODA" loading="lazy">
+                        <div class="project-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>EODA</h3>
+                        <p>Enterprise Operational Data Analytics Dashboard.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3: PCS -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-img-wrapper">
+                        <img src="images/projects/PCS/Login.png" alt="PCS" loading="lazy">
+                        <div class="project-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>PCS</h3>
+                        <p>Port Community System for vessel & voyage management.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4: The Platform -->
+                <div class="project-card" data-aos="fade-up">
+                    <div class="project-img-wrapper">
+                        <img src="images/projects/Platform/Home.png" alt="The Platform" loading="lazy">
+                        <div class="project-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>The Platform</h3>
+                        <p>Comprehensive internal tool for workflow & access management.</p>
+                    </div>
+                </div>
+
+                <!-- Project 5: WFoodExpo -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-img-wrapper">
+                        <img src="images/projects/WFoodExpo/landing%20page.jpg" alt="WFoodExpo" loading="lazy">
+                        <div class="project-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>WFoodExpo</h3>
+                        <p>Virtual F&B Exhibition Platform.</p>
+                    </div>
+                </div>
+
+                <!-- Project 6: Wizme -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-img-wrapper">
+                        <img src="images/projects/Wizme/Landing%20Page%20Hero.png" alt="Wizme" loading="lazy">
+                        <div class="project-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Wizme</h3>
+                        <p>Virtual meetings & booking management platform.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- EXPERIENCE SECTION -->
         <section id="experience" class="section-padding">
             <div class="section-header" data-aos="fade-right">
-                <h2><span>03.</span> Where I've Worked</h2>
+                <h2><span>04.</span> Where I've Worked</h2>
                 <div class="line"></div>
             </div>
 
@@ -163,6 +256,13 @@
     <footer>
         <p>Designed & Built by Hamza Hashem</p>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="caption"></div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
