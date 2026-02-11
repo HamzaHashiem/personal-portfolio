@@ -228,6 +228,8 @@ nav {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
+    width: 100%;
+    white-space: nowrap; /* Prevent breaking inside the header container usually */
 }
 .section-header h2 {
     color: var(--white);
@@ -400,7 +402,7 @@ nav {
 
 .project-info h3 {
     color: var(--white);
-    font-size: 20px; /* Reduced slightly for better fit */
+    font-size: 20px;
     margin-bottom: 0;
     transition: var(--transition);
 }
@@ -430,7 +432,7 @@ nav {
     display: none;
     position: fixed;
     z-index: 1000;
-    padding-top: 0; /* Changed for flex centering */
+    padding-top: 0;
     left: 0;
     top: 0;
     width: 100%;
@@ -571,7 +573,7 @@ nav {
     cursor: pointer;
     margin-left: -2px; /* Pull over border */
     transition: var(--transition);
-    white-space: nowrap; /* Prevent text wrapping */
+    white-space: nowrap; 
 }
 .tab-btn:hover, .tab-btn:focus {
     background-color: var(--light-navy);
@@ -681,12 +683,32 @@ footer {
     .name, .subtitle {
         font-size: 40px;
     }
+
+    /* Section Header Mobile Fixes */
+    .section-header {
+        white-space: normal; /* Allow wrap */
+        flex-wrap: nowrap; /* Keep h2 elements together */
+        align-items: center;
+    }
+    .section-header h2 {
+        font-size: 26px; /* Smaller font */
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+    }
+    .section-header span {
+        font-size: 20px; /* Smaller number */
+    }
+
     .about-grid {
         grid-template-columns: 1fr;
     }
+    
     .experience-container {
         flex-direction: column;
     }
+
+    /* Scrollable Tabs Container */
     .tabs {
         flex-direction: row;
         border-left: none;
@@ -695,22 +717,44 @@ footer {
         width: 100%;
         margin-bottom: 30px;
         -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+        
+        /* Hide scrollbar but keep functionality */
+        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;  /* IE and Edge */
+        padding-bottom: 2px; /* Prevent border clipping */
     }
+    
+    .tabs::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
     .tab-btn {
         border-left: none;
         border-bottom: 2px solid transparent;
         margin-left: 0;
         margin-bottom: -2px;
-        min-width: 120px; /* Ensure buttons have width to be scrollable */
+        min-width: 140px; /* Wider hit area */
         text-align: center;
+        padding: 15px 15px; /* Adjust padding */
+        flex-shrink: 0; /* Prevent shrinking */
     }
+    
     .tab-btn.active {
         border-left: none;
         border-bottom: 2px solid var(--green);
+        color: var(--green);
     }
+    
     .job-content {
         margin-left: 0;
+        margin-top: 10px;
     }
+
+    /* Prevent text overflow in job titles */
+    .job-content h3 {
+        font-size: 20px;
+    }
+    
     .nav-links {
         display: none; /* Hide desktop nav */
     }
