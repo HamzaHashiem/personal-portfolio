@@ -176,15 +176,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('next-btn');
     const sliderDots = document.getElementById('slider-dots');
     
-    // Project Images Configuration
-    // In a real app, this could be dynamic, but for static site we map folders
+    // Project Images Configuration - Using direct paths and URL encoding for spaces
     const projectImages = {
         'ATLP - ADAFSA': [
             'images/projects/ATLP/Home.png',
-            'images/projects/ATLP/Export Request.png',
-            'images/projects/ATLP/Import Request.png',
+            'images/projects/ATLP/Export%20Request.png',
+            'images/projects/ATLP/Import%20Request.png',
             'images/projects/ATLP/Listing.png',
-            'images/projects/ATLP/Register Food Form.png'
+            'images/projects/ATLP/Register%20Food%20Form.png'
         ],
         'EODA': [
             'images/projects/EODA/Dashboard.png',
@@ -194,25 +193,25 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         'PCS': [
             'images/projects/PCS/Login.png',
-            'images/projects/PCS/Multi Steps Forms.png',
-            'images/projects/PCS/Vessel Reg.png',
+            'images/projects/PCS/Multi%20Steps%20Forms.png',
+            'images/projects/PCS/Vessel%20Reg.png',
             'images/projects/PCS/Voyage.png'
         ],
         'The Platform': [
             'images/projects/Platform/Home.png',
-            'images/projects/Platform/Access Management.png',
-            'images/projects/Platform/Camunda Workflow.png',
-            'images/projects/Platform/Control Room.png',
-            'images/projects/Platform/FormIO Builder.png',
+            'images/projects/Platform/Access%20Management.png',
+            'images/projects/Platform/Camunda%20Workflow.png',
+            'images/projects/Platform/Control%20Room.png',
+            'images/projects/Platform/FormIO%20Builder.png',
             'images/projects/Platform/Microapps.png',
             'images/projects/Platform/Queries.png'
         ],
         'WFoodExpo': [
-            'images/projects/WFoodExpo/landing page.jpg',
+            'images/projects/WFoodExpo/landing%20page.jpg',
             'images/projects/WFoodExpo/FB_IMG_1770792684645.jpg'
         ],
         'Wizme': [
-            'images/projects/Wizme/Landing Page Hero.png',
+            'images/projects/Wizme/Landing%20Page%20Hero.png',
             'images/projects/Wizme/Signup.png'
         ]
     };
@@ -225,29 +224,31 @@ document.addEventListener('DOMContentLoaded', () => {
     
     projectCards.forEach(card => {
         card.addEventListener('click', () => {
-            const projectName = card.querySelector('h3').innerText;
-            const images = projectImages[projectName];
-            
-            if (images && images.length > 0) {
-                currentProjectImages = images;
-                currentImageIndex = 0;
+            const h3 = card.querySelector('.project-info h3');
+            if (h3) {
+                const projectName = h3.innerText.trim();
+                const images = projectImages[projectName];
                 
-                updateLightboxImage();
-                updateDots();
+                if (images && images.length > 0) {
+                    currentProjectImages = images;
+                    currentImageIndex = 0;
+                    
+                    updateLightboxImage();
+                    updateDots();
 
-                lightbox.style.display = "flex";
-                document.body.style.overflow = "hidden";
+                    lightbox.style.display = "flex";
+                    document.body.style.overflow = "hidden";
+                }
             }
         });
     });
 
     function updateLightboxImage() {
         const src = currentProjectImages[currentImageIndex];
-        // Handle URL encoding if spaces exist
-        lightboxImg.src = src.replace(/ /g, '%20'); 
+        lightboxImg.src = src; 
         
-        // Extract filename for caption
-        const filename = src.split('/').pop().split('.')[0].replace(/%20/g, ' ');
+        // Extract filename for caption (decode URI to remove %20)
+        const filename = decodeURIComponent(src.split('/').pop().split('.')[0]);
         captionText.innerText = `${filename} (${currentImageIndex + 1} / ${currentProjectImages.length})`;
     }
 
@@ -257,8 +258,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const dot = document.createElement('div');
             dot.classList.add('dot');
             if (index === currentImageIndex) dot.classList.add('active');
+            
+            // Allow clicking dots to navigate
             dot.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent closing lightbox
+                e.stopPropagation();
                 currentImageIndex = index;
                 updateLightboxImage();
                 updateDots();
@@ -269,15 +272,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navigation Controls
     function showNext() {
-        currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
-        updateLightboxImage();
-        updateDots();
+        if (currentProjectImages.length > 0) {
+            currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
+            updateLightboxImage();
+            updateDots();
+        }
     }
 
     function showPrev() {
-        currentImageIndex = (currentImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
-        updateLightboxImage();
-        updateDots();
+        if (currentProjectImages.length > 0) {
+            currentImageIndex = (currentImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
+            updateLightboxImage();
+            updateDots();
+        }
     }
 
     if (nextBtn) {
@@ -307,13 +314,16 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.style.display = "none";
         document.body.style.overflow = "auto";
     }
-
-    // Close when clicking X
+    
+    // Ensure close button works
     if (closeBtn) {
-        closeBtn.addEventListener('click', closeLightbox);
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent bubbling
+            closeLightbox();
+        });
     }
 
-    // Close when clicking outside image
+    // Close when clicking background (but not content)
     if (lightbox) {
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox || e.target.classList.contains('lightbox-container')) {
